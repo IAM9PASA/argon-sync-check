@@ -1,0 +1,6 @@
+{
+	"name": "SyncCheck",
+	"tree": {
+		"$path": "SyncCheck.server.luau"
+	}
+}

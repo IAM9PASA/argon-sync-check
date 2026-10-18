@@ -17,9 +17,21 @@ It exists for projects where the game is edited in Studio and the repo lags behi
 
 ## Requirements
 
-- Python 3
+- Python 3, or the Windows exe from a [release](https://github.com/IAM9PASA/argon-sync-check/releases)
 - Argon on your PATH (`install` uses `argon build`)
 - Roblox Studio with HTTP requests allowed for the plugin
+
+## Exe
+
+Push a `v*` tag. The release workflow builds `sync_check.exe` with PyInstaller and attaches it to that GitHub release.
+
+```bash
+sync_check.exe
+sync_check.exe --fix
+sync_check.exe install
+```
+
+Run it from the Argon project folder, then click **Sync Check** in Studio.
 
 ## Install the Studio plugin
 

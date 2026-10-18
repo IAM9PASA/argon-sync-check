@@ -243,8 +243,15 @@ class Handler(BaseHTTPRequestHandler):
         self.send(text)
 
 
+def app_dir() -> str:
+    # pyinstaller unpacks bundled files next to the running code, not next to the exe
+    if getattr(sys, "frozen", False):
+        return sys._MEIPASS
+    return os.path.dirname(os.path.abspath(__file__))
+
+
 def install_plugin():
-    here = os.path.dirname(os.path.abspath(__file__))
+    here = app_dir()
     plugins = os.path.join(os.environ["LOCALAPPDATA"], "Roblox", "Plugins")
     os.makedirs(plugins, exist_ok=True)
     # rebuild so the .rbxm always matches SyncCheck.server.luau
